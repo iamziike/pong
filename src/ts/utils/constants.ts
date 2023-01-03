@@ -1,0 +1,5 @@
+export const GAME_MODE = "GAME_MODE";
+export const GAME_DIFFICULTY = "GAME_DIFFICULTY";
+export const PADDLE_POSITION = "PADDLE_POSITION";
+export const CONNECTION_TYPE = "CONNECTION_TYPE";
+export const SOUND = "SOUND";

@@ -1,0 +1,34 @@
+@font-face {
+  font-family: Blomberg;
+  src: url("/Blomberg-8MKKZ.otf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  cursor: default;
+}
+
+:root {
+  --ff: Blomberg;
+  --color-df: hsl(0, 0%, 100%);
+  --bg-df: hsl(0, 0%, 10%);
+}
+
+body {
+  font-family: var(--ff), Inter, Avenir, Helvetica, Arial, sans-serif;
+  color: var(--color-df);
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-df);
+  transition: filter 0.5s;
+  cursor: none;
+}
