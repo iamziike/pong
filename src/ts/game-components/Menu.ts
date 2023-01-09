@@ -153,9 +153,8 @@ class Menu {
                 ctx.fillText(option.text, option.x, option.y);
               },
               pointerDownHandler: () => {
-                LocalStorageWrapper.set<GameMode>(GAME_MODE, option.value);
-
                 if (option.value === "Single") {
+                  LocalStorageWrapper.set<GameMode>(GAME_MODE, option.value);
                   this.setVisibleOption("isSingleGameMode");
                 } else if (option.value === "Double") {
                   location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
