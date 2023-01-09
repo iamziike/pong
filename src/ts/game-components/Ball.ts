@@ -5,6 +5,7 @@ class Ball {
   private isOutOfBoundsRegistered = false;
   private speedY = Math.random() * 5 > 2.5 ? 0.1 : -0.1;
   private speedX = Math.random() * 5 < 2.5 ? 0.2 : -0.2;
+  private accumulatedTime = 0;
   color = "white";
   w = 0;
   h = 0;
@@ -123,13 +124,13 @@ class Ball {
       }
     });
 
-    // this.accumulatedTime += deltaTime;
+    this.accumulatedTime += deltaTime;
 
-    // if (this.accumulatedTime > 5000) {
-    //   this.speedX += this.speedX < 0 ? -0.05 : 0.05;
-    //   this.speedY += this.speedY < 0 ? -0.05 : 0.05;
-    //   this.accumulatedTime = 0;
-    // }
+    if (this.accumulatedTime > 5000) {
+      this.speedX += this.speedX < 0 ? -0.05 : 0.05;
+      this.speedY += this.speedY < 0 ? -0.05 : 0.05;
+      this.accumulatedTime = 0;
+    }
 
     this.x += this.speedX * deltaTime;
     this.y += this.speedY * deltaTime;
