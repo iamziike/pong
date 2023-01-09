@@ -1,4 +1,6 @@
-import { CanvasSize } from "../utils/types";
+import { GAME_DIFFICULTY } from "../utils/constants";
+import LocalStorageWrapper from "../utils/LocalStorageWrapper";
+import { CanvasSize, GameDifficulty } from "../utils/types";
 import Ball from "./Ball";
 
 abstract class Paddle {
@@ -98,6 +100,15 @@ export class ComputerPaddle extends Paddle {
   }
 
   update(deltaTime: number, canvasSize: CanvasSize, balls: Ball[]) {
+    const difficulty = LocalStorageWrapper.get<GameDifficulty>(GAME_DIFFICULTY);
+    if (difficulty === "EASY") {
+      this.speed = 0.5;
+    } else if (difficulty === "MEDIUM") {
+      this.speed = 1;
+    } else if (difficulty === "HARD") {
+      this.speed = 2;
+    }
+
     if (this.shouldMoveUp && this.y - this.speed > 0) {
       this.y -= this.speed * deltaTime;
     } else if (
@@ -117,8 +128,8 @@ export class ComputerPaddle extends Paddle {
         this.shouldMoveDown = true;
         this.shouldMoveUp = false;
       } else {
-        // this.shouldMoveDown = false;
-        // this.shouldMoveUp = false;
+        this.shouldMoveDown = false;
+        this.shouldMoveUp = false;
       }
     });
   }
