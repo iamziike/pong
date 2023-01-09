@@ -45,7 +45,7 @@ abstract class GameUtils {
             const isSoundOn = LocalStorageWrapper.get<boolean>(SOUND);
             isSoundOn && clickMusic.play();
           }
-          if (cursor.isPointerUp(boxSize.data)) {
+          if (cursor.isPointerUp()) {
             handlers.pointerUpHandler && handlers.pointerUpHandler();
           }
         } else {

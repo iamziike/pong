@@ -59,9 +59,7 @@ class Game {
     if (this.state.isStartNewGame) {
       const color = "white";
 
-      this.balls = [
-        new Ball(canvasSize.w * 0.5, canvasSize.h * 0.5, 10, canvasSize),
-      ];
+      this.balls = [new Ball(canvasSize.w * 0.5, canvasSize.h * 0.5, 10)];
 
       for (let count = 0; count < 2; count++) {
         if (this.mode === "Single") {
@@ -341,9 +339,7 @@ class Game {
       },
     ];
 
-    this.balls = [
-      new Ball(canvasSize.w * 0.5, canvasSize.h * 0.5, 10, canvasSize),
-    ];
+    this.balls = [new Ball(canvasSize.w * 0.5, canvasSize.h * 0.5, 10)];
 
     this.state.isOver = false;
     this.state.isStartNewGame = false;

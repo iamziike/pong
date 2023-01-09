@@ -55,23 +55,23 @@ class Cursor {
   }
 
   isHover(boxSize: BoxSize) {
-    const isWithinBox = (target: BoxSize, reference: BoxSize) => {};
+    // const isWithinBox = (target: BoxSize, reference: BoxSize) => {};
 
-    const boxSizeAxis = {
-      x1: boxSize.x,
-      x2: boxSize.x + boxSize.w,
-      y1: boxSize.y,
-      y2: boxSize.y + boxSize.h,
-    };
+    // const boxSizeAxis = {
+    //   x1: boxSize.x,
+    //   x2: boxSize.x + boxSize.w,
+    //   y1: boxSize.y,
+    //   y2: boxSize.y + boxSize.h,
+    // };
 
-    const squaredArcAxis = {
-      x1: this.coordinate.x,
-      x2: this.coordinate.x + this.coordinate.w,
-      y1: this.coordinate.y,
-      y2: this.coordinate.y + this.coordinate.h,
-      x: 0,
-      y: 0,
-    };
+    // const squaredArcAxis = {
+    //   x1: this.coordinate.x,
+    //   x2: this.coordinate.x + this.coordinate.w,
+    //   y1: this.coordinate.y,
+    //   y2: this.coordinate.y + this.coordinate.h,
+    //   x: 0,
+    //   y: 0,
+    // };
 
     return (
       this.x > boxSize.x &&
@@ -92,7 +92,7 @@ class Cursor {
     return this.isHover(boxSize) && this.pointerDown.value;
   }
 
-  isPointerUp(boxSize: BoxSize) {
+  isPointerUp() {
     return false;
   }
 }

@@ -10,12 +10,7 @@ class Ball {
   w = 0;
   h = 0;
 
-  constructor(
-    public x: number,
-    public y: number,
-    public radius: number,
-    canvasSize: CanvasSize
-  ) {
+  constructor(public x: number, public y: number, public radius: number) {
     // setupCode
     // this.setSize(canvasSize);
   }
@@ -65,18 +60,18 @@ class Ball {
         squaredArc.y + squaredArc.h >= paddle.y &&
         squaredArc.y + squaredArc.h <= paddle.y + paddle.h;
 
-      const isXAxisCollideLeftPaddle = squaredArc.x <= paddle.x + paddle.w;
-      const isXAxisCollideRightPaddle = squaredArc.x + squaredArc.w >= paddle.x;
-      const isYAxisCollidePaddleTop = squaredArc.y + squaredArc.h >= paddle.y;
-      const isYAxisCollidePaddleMiddle = squaredArc.y + squaredArc.h > paddle.y;
-      const isYAxisCollidePaddleBottom = "";
+      // const isXAxisCollideLeftPaddle = squaredArc.x <= paddle.x + paddle.w;
+      // const isXAxisCollideRightPaddle = squaredArc.x + squaredArc.w >= paddle.x;
+      // const isYAxisCollidePaddleTop = squaredArc.y + squaredArc.h >= paddle.y;
+      // const isYAxisCollidePaddleMiddle = squaredArc.y + squaredArc.h > paddle.y;
+      // const isYAxisCollidePaddleBottom = "";
 
       // LEFT POSITION & //RIGHT POSITION
       // hitting the top side of the paddle
-      const isBallCollideWithPaddleTop =
-        squaredArc.y + squaredArc.h >= paddle.y &&
-        squaredArc.y + squaredArc.h < paddle.y + paddle.h &&
-        squaredArc.x;
+      // const isBallCollideWithPaddleTop =
+      //   squaredArc.y + squaredArc.h >= paddle.y &&
+      //   squaredArc.y + squaredArc.h < paddle.y + paddle.h &&
+      //   squaredArc.x;
 
       const isOutLeftPaddleBounds =
         paddle.position === "LEFT_PADDLE" &&
